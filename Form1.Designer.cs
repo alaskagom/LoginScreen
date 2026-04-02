@@ -32,13 +32,14 @@
             txtID = new TextBox();
             txtPW = new TextBox();
             btnLogin = new Button();
+            lblerrormsg = new Label();
             SuspendLayout();
             // 
             // lblAppName
             // 
             lblAppName.AutoSize = true;
             lblAppName.Font = new Font("맑은 고딕", 46.2F, FontStyle.Bold);
-            lblAppName.Location = new Point(193, 75);
+            lblAppName.Location = new Point(194, 42);
             lblAppName.Name = "lblAppName";
             lblAppName.Size = new Size(246, 102);
             lblAppName.TabIndex = 0;
@@ -48,20 +49,20 @@
             // 
             txtID.Font = new Font("맑은 고딕", 22F);
             txtID.ForeColor = Color.Silver;
-            txtID.Location = new Point(123, 226);
+            txtID.Location = new Point(123, 174);
             txtID.Name = "txtID";
             txtID.Size = new Size(386, 56);
             txtID.TabIndex = 2;
             txtID.Text = "아이디";
             txtID.Enter += txtID_Enter;
-            txtID.KeyDown += this.txtID_KeyDown;
+            txtID.KeyDown += txtID_KeyDown;
             txtID.Leave += txtID_Leave;
             // 
             // txtPW
             // 
             txtPW.Font = new Font("맑은 고딕", 22F);
             txtPW.ForeColor = Color.Silver;
-            txtPW.Location = new Point(123, 307);
+            txtPW.Location = new Point(123, 253);
             txtPW.Name = "txtPW";
             txtPW.Size = new Size(386, 56);
             txtPW.TabIndex = 3;
@@ -83,18 +84,30 @@
             btnLogin.UseVisualStyleBackColor = false;
             btnLogin.Click += btnLogin_Click;
             // 
+            // lblerrormsg
+            // 
+            lblerrormsg.AutoSize = true;
+            lblerrormsg.Font = new Font("맑은 고딕", 12F, FontStyle.Regular, GraphicsUnit.Point, 129);
+            lblerrormsg.ForeColor = Color.Red;
+            lblerrormsg.Location = new Point(123, 327);
+            lblerrormsg.Name = "lblerrormsg";
+            lblerrormsg.Size = new Size(377, 28);
+            lblerrormsg.TabIndex = 4;
+            lblerrormsg.Text = "아이디 또는 비밀번호가 잘못되었습니다.";
+            lblerrormsg.Visible = false;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(649, 512);
+            Controls.Add(lblerrormsg);
             Controls.Add(btnLogin);
             Controls.Add(txtPW);
             Controls.Add(txtID);
             Controls.Add(lblAppName);
             Name = "Form1";
             Text = "Login Screen";
-            KeyDown += Form1_KeyDown;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -105,5 +118,6 @@
         private TextBox txtID;
         private TextBox txtPW;
         private Button btnLogin;
+        private Label lblerrormsg;
     }
 }
